@@ -90,7 +90,7 @@ optional arguments:
 * #### The --target option
 
   * this option will allow you to selected specific fields of the message instead of random fields in the message.
-* If you want to fuzz all fields in a random manner, do not set this option.
+  * If you want to fuzz all fields in a random manner, do not set this option.
   * By passing the target option a value of "<fuzz>" it will replace the chosen fields with fuzz data.
   * This message should be saved in the messages folder.
   
@@ -104,7 +104,8 @@ optional arguments:
   AL1|1||^ASPIRIN
   DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A
 ```
-  ```
+ 
+ ```
 $ python3 .hl7fuzz.py -f messages -s 100 --target "<fuzz>" -d 192.168.1.3 -p 9550
  ```
 
