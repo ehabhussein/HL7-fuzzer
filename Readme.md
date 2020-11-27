@@ -117,7 +117,7 @@ $ python3 .hl7fuzz.py -f messages -s 100 --target "<fuzz>" -d 192.168.1.3 -p 955
     ```bash
     $ python3 .hl7fuzz.py -f messages -s 100 --change 1,2 -d 192.168.1.3 -p 9550
     ```
-
+ 
   * the message will always change the second line in the message
 
     * <THIS WILL BE CHANGED> can be seen in the second line below
