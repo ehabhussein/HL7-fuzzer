@@ -94,7 +94,7 @@ optional arguments:
   * By passing the target option a value of \<fuzz\> it will replace the chosen fields with fuzz data.
   * This message should be saved in the messages folder.
   ```bash
-   $ python3 hl7fuzz.py -f messages -s 100 --target \"\<fuzz\>\" -d 192.168.1.3 -p 9550
+   $ python3 hl7fuzz.py -f messages -s 100 --target "<fuzz>" -d 192.168.1.3 -p 9550
  ```
   
   ```reStructuredText
