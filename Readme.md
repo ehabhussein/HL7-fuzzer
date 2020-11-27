@@ -22,7 +22,7 @@ pip3 install -r requirements.txt
 └───payloads				(Folder containing some of the fuzzing strings that the fuzzer uses)
 ```
 
-### Fuzzing Payloads
+### Fuzzer Payloads
 
 ```python
 self.strats = [b"A" * randrange(1, self.cmdargs.max), urandom(randrange(1, self.cmdargs.max)), choice(self.elements),choice(self.sqli),choice(self.xss), choice(self.fmtstr),choice(self.badstrings)]
