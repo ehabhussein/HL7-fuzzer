@@ -93,6 +93,9 @@ optional arguments:
   * If you want to fuzz all fields in a random manner, do not set this option.
   * By passing the target option a value of \<fuzz\> it will replace the chosen fields with fuzz data.
   * This message should be saved in the messages folder.
+  ```bash
+   $ python3 hl7fuzz.py -f messages -s 100 --target \"\<fuzz\>\" -d 192.168.1.3 -p 9550
+ ```
   
   ```reStructuredText
   MSH|^~\&|MegaReg|XYZHospC|<fuzz>|XYZImgCtr|20060529090131-0500||ADT^A01^ADT_A01|01052901|P|2.5
@@ -104,11 +107,8 @@ optional arguments:
   AL1|1||^ASPIRIN
   DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A
 ```
- 
-```
-$ python3 hl7fuzz.py -f messages -s 100 --target \"\<fuzz\>\" -d 192.168.1.3 -p 9550
-```
- 
+
+
 * #### The --change option
 
   * When sending messages you might come across a reply saying that its a duplicate request. To get around this issue you can specify the field that needs to always have its value changed and the fuzzer will automatically do that for you.
