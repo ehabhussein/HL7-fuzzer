@@ -3,7 +3,7 @@
 #### Clone the repo: 
 
 ```
-https://gitlab.ioactive.com/ehab.hussein/hl7-fuzzer.git
+https://github.com/ehabhussein/HL7
 ```
 
 ### Install the requirements
