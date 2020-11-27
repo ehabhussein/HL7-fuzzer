@@ -1,0 +1,1 @@
+Get the messages from the vendor you are testing with and remove this file
