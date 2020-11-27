@@ -121,7 +121,7 @@ optional arguments:
  
   * the message will always change the second line in the message
 
-  * <THIS WILL BE CHANGED> can be seen in the second line below
+  * \<THIS WILL BE CHANGED\> can be seen in the second line below
 
 ```reStructuredText
 MSH|^~\&|MegaReg|XYZHospC|SuperOE|XYZImgCtr|20060529090131-0500||ADT^A01^ADT_A01|01052901|P|2.5
