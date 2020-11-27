@@ -139,7 +139,7 @@ DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A
   * The line below will not be touched
 
     ```reStructuredText
-    MSH|^~\&|SCM|AGH|MUSE|SITE0001|345345234567765||ORM^O01||P|2.4
+    MSH|^~\&|MegaReg|XYZHospC|SuperOE|XYZImgCtr|20060529090131-0500||ADT^A01^ADT_A01|01052901|P|2.5
     ```
 
     ```bash
