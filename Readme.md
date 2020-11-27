@@ -104,10 +104,9 @@ optional arguments:
   AL1|1||^ASPIRIN
   DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A
 ```
-  
-```
+  ```
 $ python3 .hl7fuzz.py -f messages -s 100 --target "<fuzz>" -d 192.168.1.3 -p 9550
-```
+ ```
 
 * #### The --change option
 
