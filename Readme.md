@@ -93,11 +93,12 @@ optional arguments:
   * If you want to fuzz all fields in a random manner, do not set this option.
   * By passing the target option a value of \<fuzz\> it will replace the chosen fields with fuzz data.
   * This message should be saved in the messages folder.
-  ```bash
+ 
+ ```bash
    $ python3 hl7fuzz.py -f messages -s 100 --target "<fuzz>" -d 192.168.1.3 -p 9550
  ```
   
-  ```reStructuredText
+```reStructuredText
   MSH|^~\&|MegaReg|XYZHospC|<fuzz>|XYZImgCtr|20060529090131-0500||ADT^A01^ADT_A01|01052901|P|2.5
   EVN||200605290901||||200605290900
   PID|||56782445^^^UAReg^PI||KLEINSAMPLE^BARRY^Q^JR||19620910|M||2028-9^^HL70005^RA99113^^XYZ|260 GOODWIN CREST DRIVE^^BIRMINGHAM^AL^35209^^M~NICKELL’S PICKLES^10000 <fuzz> AVE^BIRMINGHAM^AL^35200^^O|||||||0105I30001^^^99DEF^AN
@@ -107,6 +108,7 @@ optional arguments:
   AL1|1||^ASPIRIN
   DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A
 ```
+ 
 
 
 * #### The --change option
@@ -119,7 +121,7 @@ optional arguments:
  
   * the message will always change the second line in the message
 
-    * <THIS WILL BE CHANGED> can be seen in the second line below
+  * <THIS WILL BE CHANGED> can be seen in the second line below
 
 ```reStructuredText
 MSH|^~\&|MegaReg|XYZHospC|SuperOE|XYZImgCtr|20060529090131-0500||ADT^A01^ADT_A01|01052901|P|2.5
