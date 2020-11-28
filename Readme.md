@@ -151,7 +151,7 @@ DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A
     ```
 
     ```bash
-    $ python3 .hl7fuzz.py -f messages -s 100 --allparts 1  -d 192.168.1.3 -p 9550
+    $ python3 hl7fuzz.py -f messages -s 100 --allparts 1  -d 192.168.1.3 -p 9550
     ```
 
     
