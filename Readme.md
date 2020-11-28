@@ -88,9 +88,9 @@ optional arguments:
   -x DELAY, --delay DELAY
                         delay interval between sending packets. Set this to 0 for DoS attack/stress testing.
   -b SERVER, --server SERVER
-                        Setup a server to respond with malicious HL7 messages.
+                        Setup a server to respond with malicious HL7 messages. Set this option to 1 : --server 1
   -bp SERVERPORT, --serverport SERVERPORT
-                        Setup the server port respond with malicious HL7 messages.
+                        Setup the server port. .
 ```
 
 * #### The --target option
