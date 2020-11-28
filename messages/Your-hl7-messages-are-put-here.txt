@@ -1,1 +1,1 @@
-Get the messages from the vendor you are testing with and remove this file
+Put the HL7 messages from the vendor you are testing with in this folder and remove this file
