@@ -9,7 +9,7 @@ https://en.wikipedia.org/wiki/Health_Level_Seven_International
 #### Clone the repo: 
 
 ```
-https://github.com/ehabhussein/HL7
+https://github.com/IOActive/HL7-Fuzzer
 ```
 
 ### Install the requirements
@@ -101,13 +101,13 @@ optional arguments:
 
 * #### The --target option
 
-  * this option will allow you to selected specific fields of the message instead of random fields in the message.
+  * this option will allow you to select and fuzz specific fields of the message instead of random fields in the message.
   * If you want to fuzz all fields in a random manner, do not set this option.
   * By passing the target option a value of \<fuzz\> it will replace the chosen fields with fuzz data.
   * This message should be saved in the messages folder.
  
  ```bash
-   $ python3 hl7fuzz.py -f messages -s 100 --target "<fuzz>" -d 192.168.1.3 -p 9550
+   $ python3 hl7fuzz.py -f messages -s 100 --target "<fuzz>" -d 192.168.1.3 -p 9550 -m 2000
  ```
   
 ```reStructuredText
@@ -128,7 +128,7 @@ optional arguments:
   * When sending messages you might come across a reply saying that its a duplicate request. To get around this issue you can specify the field that needs to always have its value changed and the fuzzer will automatically do that for you.
 
     ```bash
-    $ python3 hl7fuzz.py -f messages -s 100 --change 1,2 -d 192.168.1.3 -p 9550
+    $ python3 hl7fuzz.py -f messages -s 100 --change 1,2 -d 192.168.1.3 -p 9550 -m 2000
     ```
  
   * the message will always change the second line in the message
@@ -150,22 +150,24 @@ DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A
 
   * if this option is set to zero it will not change any part of the first line of a message
 
-  * The line below will not be touched
+  * The line below will not be touched if --allparts is set to its default value of zero.
 
     ```reStructuredText
     MSH|^~\&|MegaReg|XYZHospC|SuperOE|XYZImgCtr|20060529090131-0500||ADT^A01^ADT_A01|01052901|P|2.5
     ```
-
+  
+  * To have the ability to change the first segment pass the option --allparts 1 
+  
     ```bash
     $ python3 hl7fuzz.py -f messages -s 100 --allparts 1  -d 192.168.1.3 -p 9550
     ```
 
 ### The Fuzzing server
-  * The server simply replies with random data taken from `self.strats` to client's sending an HL7 message.
+  * The server simply replies with random data taken from `self.strats` to client sending an HL7 message.
   * The server session sqlite file will be saved in the DB folder with `-server` in the filename.
   * to start the server:
  
  ```bash
-  $python3 hl7fuzz.py --server 1 --serverport 9550 -m 3000
+  $python3 hl7fuzz.py --server 1 --serverport 9550 -m 2000
   ```
     
