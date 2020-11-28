@@ -154,4 +154,11 @@ DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A
     $ python3 hl7fuzz.py -f messages -s 100 --allparts 1  -d 192.168.1.3 -p 9550
     ```
 
+* #### The Fuzzing server
+  * The server simply replies with random data taken from `self.strats` to client's sending an HL7 message
+  * to start the server:
+ 
+ ```bash
+  $python3 hl7fuzz.py --server 1 --serverport 9550 -m 3000
+  ```
     
