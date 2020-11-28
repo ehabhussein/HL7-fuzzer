@@ -60,16 +60,16 @@ DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A
 * #### Help
 
 ```bash
-$ python hl7fuzz.py -h
-usage: hl7fuzz.py [-h] [-f FOLDER] -d IP -p PORT [-s SAMPLES] [-c CHANGE] [-m MAX] [-t TARGET] [-a ALLPARTS]
-                  [-v NOISEY]
+$ python3 hl7fuzz.py -h 
+usage: hl7fuzz.py [-h] [-f FOLDER] [-d IP] [-p PORT] [-s SAMPLES] [-c CHANGE] [-m MAX] [-t TARGET] [-a ALLPARTS]
+                  [-v NOISEY] [-x DELAY] [-b SERVER] [-bp SERVERPORT]
 
 An extremely dumb HL7 message fuzzer.
 
 optional arguments:
   -h, --help            show this help message and exit
   -f FOLDER, --folder FOLDER
-                        Folder containing an hl7 messages as text files.
+                        Folder containing a hl7 messages as text files.
   -d IP, --ip IP        Destination Ip address.
   -p PORT, --port PORT  Destination port.
   -s SAMPLES, --samples SAMPLES
@@ -85,6 +85,12 @@ optional arguments:
                         segment.
   -v NOISEY, --noisey NOISEY
                         to show both sent and received messages set this to 1
+  -x DELAY, --delay DELAY
+                        delay interval between sending packets. Set this to 0 for DoS attack/stress testing.
+  -b SERVER, --server SERVER
+                        Setup a server to respond with malicious HL7 messages.
+  -bp SERVERPORT, --serverport SERVERPORT
+                        Setup the server port respond with malicious HL7 messages.
 ```
 
 * #### The --target option
