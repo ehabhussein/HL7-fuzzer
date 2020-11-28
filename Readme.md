@@ -69,7 +69,7 @@ An extremely dumb HL7 message fuzzer.
 optional arguments:
   -h, --help            show this help message and exit
   -f FOLDER, --folder FOLDER
-                        Folder containing a hl7 messages as text files.
+                        Folder containing hl7 messages as seperate text files.
   -d IP, --ip IP        Destination Ip address.
   -p PORT, --port PORT  Destination port.
   -s SAMPLES, --samples SAMPLES
@@ -90,7 +90,7 @@ optional arguments:
   -b SERVER, --server SERVER
                         Setup a server to respond with malicious HL7 messages. Set this option to 1 : --server 1
   -bp SERVERPORT, --serverport SERVERPORT
-                        Setup the server port. .
+                        Setup the server port used with --server option .
 ```
 
 * #### The --target option
