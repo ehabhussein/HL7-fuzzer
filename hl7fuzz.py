@@ -3,8 +3,6 @@
 
 import argparse
 import socket
-import platform
-import multiprocessing
 import queue
 from os import listdir, urandom
 from random import randrange, choice
@@ -58,7 +56,6 @@ class hl7fuzz():
         self.metadata.create_all(self.engine)
         return self.engine, fuzzsession
 
-
     def grab(self):
         print("[-] Queuing baseline messages.")
         for message in listdir(self.cmdargs.folder):
@@ -66,7 +63,6 @@ class hl7fuzz():
                 self.bq.put(b''.join(msg.readlines()))
         print("\t-Done!")
         self.fuzz()
-
 
     def fuzz(self):
         print("[-] Connecting to server...")
@@ -154,11 +150,14 @@ class hl7fuzz():
         dbconnect = dbobj.connect()
         while True:
             try:
-                msg = clientS.recv(1024)
-                print (addr, ' >> ', msg)
+                try:
+                    msg = clientS.recv(1024)
+                    print(addr, ' >> ', msg)
+                except:
+                    break
                 if not msg:
                     break
-                send_hl7 = b"TODO\r\n"
+                send_hl7 = self.header+choice(self.strats)+self.tail
                 clientS.send(send_hl7)
                 try:
                     _insert = _table.insert().values(sent=send_hl7, recv=msg)
@@ -178,8 +177,9 @@ class hl7fuzz():
                 c, addr = s.accept()
                 _thread.start_new_thread(self.new_hl7_client, (c, addr))
             except KeyboardInterrupt:
-                s.close()
-                exit()
+                break
+        s.close()
+        exit()
 
 if __name__ == '__main__':
     cmdopts = argparse.ArgumentParser(description='An extremely dumb HL7 message fuzzer.')
