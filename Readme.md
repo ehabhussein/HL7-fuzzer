@@ -9,7 +9,7 @@ https://en.wikipedia.org/wiki/Health_Level_Seven_International
 #### Clone the repo: 
 
 ```
-https://github.com/IOActive/HL7-Fuzzer
+https://github.com/ehabhussein/HL7-fuzzer
 ```
 
 ### Install the requirements
